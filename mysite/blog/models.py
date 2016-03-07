@@ -9,4 +9,7 @@ class BlogsPost(models.Model):
 	body = models.TextField()
 	timestamp = models.DateTimeField()
 
-admin.site.register(BlogsPost)
+class BlogPostAdmin(admin.ModelAdmin):
+	list_display = ('title', 'timestamp')
+
+admin.site.register(BlogsPost, BlogPostAdmin)
